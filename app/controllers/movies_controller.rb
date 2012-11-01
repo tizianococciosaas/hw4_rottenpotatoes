@@ -64,4 +64,8 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def fmwsd
+   puts Movie.find_by_director(Movie.find(params[:movie_id]).director)
+  end
+
 end
