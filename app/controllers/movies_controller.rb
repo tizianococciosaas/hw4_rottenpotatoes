@@ -65,7 +65,10 @@ class MoviesController < ApplicationController
   end
 
   def fmwsd
-   puts Movie.find_by_director(Movie.find(params[:movie_id]).director)
+   @current_movie_title = Movie.find(params[:movie_id]).title
+   #@movies = Movie.find_by_director(Movie.find(params[:movie_id]).director)
+   @movies = Movie.find_all_by_director(Movie.find(params[:movie_id]).director)
+   #@movies = Movie.find_all_by_director("George Lucas")
   end
 
 end
